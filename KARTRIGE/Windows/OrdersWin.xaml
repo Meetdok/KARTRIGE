@@ -1,0 +1,36 @@
+﻿<Window x:Class="KARTRIGE.Windows.OrdersWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KARTRIGE.Windows"
+        mc:Ignorable="d"
+        Title="Заявки" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock  Grid.Column="4"  Grid.Row="1" VerticalAlignment="Top" Height="25" Text="Кабинет: " FontSize="18" />
+        <ComboBox ItemsSource="{Binding CabinetSelect}" DisplayMemberPath="NumberCabinet" Grid.Row="1" Grid.Column="4" VerticalAlignment="Center" Height="20" Margin="0,0,80,0"/>
+        <TextBlock Grid.Row="2" Grid.Column="4" VerticalAlignment="Top" Height="25" Text="Цена:" FontSize="18"/>
+        <TextBlock Grid.Row="2" Grid.Column="4" VerticalAlignment="Center" Height="25" FontSize="18" Foreground="#FF040404" Background="#FFD6D1D1" Margin="0,0,56,0"/>
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="Устройство:" VerticalAlignment="Top" Height="25" FontSize="18" />
+        <TextBlock  Grid.Column="1"  Grid.Row="2" VerticalAlignment="Top" Height="25" Text="Тип работы: " FontSize="18" />
+        <TextBlock  Grid.Column="1"  Grid.Row="3" VerticalAlignment="Top" Height="25" Text="Материалы/Запчасти: " FontSize="15" />
+        <ComboBox Grid.Column="1"  Grid.Row="3" VerticalAlignment="Center" Height="25" />
+        <ComboBox ItemsSource="{Binding OrderTypeSelect}" DisplayMemberPath="NameOfOrder" Grid.Row="2" Grid.Column="1" Height="25" VerticalAlignment="Center"/>
+        <ComboBox ItemsSource="{Binding DeviceSelect}" DisplayMemberPath="NameDevice" Grid.Row="1" Grid.Column="1"  VerticalAlignment="Center" />
+        <Button  Grid.Column="4" Grid.Row="2" Margin="0,86,80,43" Grid.RowSpan="2" Content="Оформить" FontSize="16"/>
+    </Grid>
+</Window>

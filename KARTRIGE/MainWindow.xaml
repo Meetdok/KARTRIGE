@@ -1,0 +1,35 @@
+﻿<Window x:Class="KARTRIGE.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KARTRIGE"
+        mc:Ignorable="d"
+        Title="Обслуживание картриджей" Height="540" Width="400" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="149*"/>
+            <RowDefinition Height="140*"/>
+            <RowDefinition Height="145*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Center" Height="50" Text="ООО Твоя Мама" TextAlignment="Center" FontSize="25" FontWeight="Bold" FontFamily="Yu Gothic UI Semibold" />
+        <Menu Grid.ColumnSpan="4" VerticalAlignment="Top" Height="19">
+            
+            <MenuItem Header="Заявки" MouseDoubleClick="Orders" Cursor="Hand">
+                <MenuItem Header="Спиок заявок" Cursor="Hand" Click="ListOrder"/>
+            </MenuItem>
+            
+            <MenuItem Header="Кабинеты" MouseDoubleClick="ListCabinets" Cursor="Hand">
+                <MenuItem Header="Добавить кабинет" Click="CabinetAdd" Cursor="Hand"/>
+            </MenuItem>
+            
+            <Frame Content="{Binding CurrentPage}" Grid.Row="1" NavigationUIVisibility="Hidden"/>
+        </Menu>
+    </Grid>
+</Window>
