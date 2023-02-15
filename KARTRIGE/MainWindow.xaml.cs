@@ -25,6 +25,13 @@ namespace KARTRIGE
         public MainWindow()
         {
             InitializeComponent();
+
+            /*Microsoft.Data.SqlClient.SqlConnectionStringBuilder sb = new Microsoft.Data.SqlClient.SqlConnectionStringBuilder();
+            sb.IntegratedSecurity = true;
+            sb.DataSource = "127.0.0.1";
+            sb.InitialCatalog = "db";
+            var str = sb.ToString();*/
+            //"Data Source=127.0.0.1;Initial Catalog=db;Integrated Security=True"
             DataContext = new MainVM();
         }
 
